@@ -51,12 +51,13 @@ header {
 }
 
 .logo img {
-  min-width: auto;
+  width: 100%;
 }
 
 .platform,
 .explanations,
 .payments,
+.labels-container,
 .decisions,
 footer {
   display: flex;
@@ -108,12 +109,6 @@ footer {
   padding-left: 10px;
   padding-right: 10px;
   margin-bottom: 48px;
-}
-
-.labels-container {
-  display: flex;
-  flex-wrap: wrap;
-  padding: 48px;
 }
 
 .labels {
@@ -343,7 +338,19 @@ footer li {
 }
 
 /*Mobile*/
-@media screen and (max-width: 599px) {
+@media screen and (min-width: 300px) and (max-width: 599px) {
+
+.header, .platform, .labels-container,
+.explanations,
+.payments,
+.decisions,
+footer {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 24px;
+}
+
+
   .burger-line {
     width: 30px;
     height: 3px;
@@ -370,19 +377,49 @@ footer li {
     opacity: 0.5;
   }
 
+  text-button-part {
+    flex: 1 100%;
+    margin-bottom: 48px;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .text-button-part h1 {
+    font-size: 40px;
+    line-height: 50px;
+    text-align: left;
+  }
+
   .video-part {
     flex: 1 100%;
-    overflow: hidden;
+    padding-left: 0;
+    padding-right: 0;
+   overflow: hidden;
   }
 
   .video {
     flex: 1 100%;
-    overflow: hidden;
+   overflow: hidden;
+  }
+  .labels {
+    flex: 1;
+    padding: 0;
   }
 }
 
 /*Tablets */
 @media screen and (min-width: 600px) and (max-width: 1023px) {
+
+  .header, .platform, .labels-container,
+  .explanations,
+  .payments,
+  .decisions,
+  footer {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 24px;
+  }
+
   .burger-line {
     width: 40px;
     height: 4px;
@@ -408,4 +445,33 @@ footer li {
   .pseudo-hamburger:hover {
     opacity: 0.5;
   }
+
+  text-button-part {
+    flex: 1 50%;
+    margin-bottom: 48px;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+
+  .video-part {
+    flex: 1 50%;
+    padding-left: 5px;
+  padding-right: 0;
+  }
+
+  .video {
+    flex: 1 50%;
+  }
+
+  .about,
+.products,
+.recourses,
+.platform,
+.uptodate {
+  flex: 1 18%;
+  padding: 0;
+}
+
+
 }
